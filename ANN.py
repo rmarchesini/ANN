@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 class ANN(object):
 	def __init__(self, M1, M2, M3):
-		self.M = M1
+		self.M1 = M1
 		self.M2 = M2
 		self.M3 = M3
 
@@ -31,11 +31,11 @@ class ANN(object):
 
 		#Inicializacion de parámetros
 		if init_param:
-			self.W1 = np.random.randn(D, self.M) / np.sqrt(D)
-			self.W2 = np.random.randn(self.M, self.M2) / np.sqrt(self.M)
+			self.W1 = np.random.randn(D, self.M1) / np.sqrt(D)
+			self.W2 = np.random.randn(self.M1, self.M2) / np.sqrt(self.M1)
 			self.W3 = np.random.randn(self.M2, self.M3) / np.sqrt(self.M2)
 			self.W4 = np.random.randn(self.M3, K) / np.sqrt(self.M3)
-			self.b1 = np.zeros(self.M)
+			self.b1 = np.zeros(self.M1)
 			self.b2 = np.zeros(self.M2)
 			self.b3 = np.zeros(self.M3)
 			self.b4 = np.zeros(K)
